@@ -276,15 +276,16 @@
                 <div class="request-form">
                     <form action="" name="constructionform" onsubmit="return construction()" method="post">
                         <div class="request-box">
-                            <input type="text" placeholder="your name" name="name" onkeyup="construction()" />
+                            <input type="text" placeholder="your name" name="name" onkeyup="construction()" required />
                             <span id="error1"></span>
                         </div>
                         <div class="request-box">
-                            <input type="text" placeholder="email" name="email" onkeyup="construction()" />
+                            <input type="text" placeholder="email" name="email" onkeyup="construction()" required/>
                             <span id="error2"></span>
                         </div>
                         <div class="request-box">
-                            <input type="text" placeholder="phone number" name="number" onkeyup="construction()" />
+                            <input type="text" placeholder="phone number" name="number" onkeyup="construction()" required
+                                />
                             <span id="error3"></span>
                         </div>
                         <textarea name="" id="" cols="30" rows="10" placeholder="message"></textarea>
@@ -369,42 +370,6 @@
                     x.classList.remove("sticky");
                 }
             })
-
-            function construction() {
-                var x = document.constructionform.name.value;
-                var y = document.constructionform.email.value;
-                var z = document.constructionform.number.value;
-
-                var regname = /^[a-zA-Z]{3,14}$/;
-                var regmail = /^[a-zA-Z0-9._]{3,}[@][a-zA-Z]{5}[.][a-zA-Z]{2,3}$/;
-                var regnumber = /^[0-9]{10}$/;
-
-                if (regname.test(x)) {
-                    if ([x] === " ") {
-                        document.getElementById("error1").innerHTML = "Can't Take Space";
-                        return false;
-                    } else {
-                        document.getElementById("error1").innerHTML = "";
-                    }
-                } else {
-                    document.getElementById("error1").innerHTML = "Enter Valid Name";
-                    return false
-                }
-
-                if (regmail.test(y)) {
-                    document.getElementById("error2").innerHTML = "";
-                } else {
-                    document.getElementById("error2").innerHTML = "Enter Valid Email";
-                    return false
-                }
-
-                if (regnumber.test(z)) {
-                    document.getElementById("error3").innerHTML = "";
-                } else {
-                    document.getElementById("error3").innerHTML = "Enter Valid Number";
-                    return false
-                }
-            }
 
         </script>
 
